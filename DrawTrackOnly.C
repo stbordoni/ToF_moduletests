@@ -17,13 +17,13 @@ const double L = 220; // cm
 const double Vinf = 15.90; // velocity [cm/s]
 //const double Vinf = 17.00;
 
-//double VINF[20]= {Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf};
+double VINF[20]= {Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf};
 
 // TOF1
 //double VINF[20]= {16.014,15.964,15.912,15.906,15.870,15.872,15.889,15.724,15.924,15.878,15.934,15.929,15.889,15.839,15.821,15.958,15.939,15.919,15.879,16.014};
 
 // TOF2
-double VINF[20]= {16.053,15.896,15.908,15.902,15.908,15.829,15.815,15.798,15.880,15.915,15.907,15.911,15.860,15.926,15.896,15.912,15.858,15.968,15.940,15.989};
+//double VINF[20]= {16.053,15.896,15.908,15.902,15.908,15.829,15.815,15.798,15.880,15.915,15.907,15.911,15.860,15.926,15.896,15.912,15.858,15.968,15.940,15.989};
 
 // TOF3
 //double VINF[20]= {16.010,15.917,15.944,15.890,15.865,15.897,15.889,15.889,15.886,15.864,15.867,15.827,15.871,15.828,15.904,15.960,15.976,15.966,16.023,15.871};
@@ -38,13 +38,13 @@ double VINF[20]= {16.053,15.896,15.908,15.902,15.908,15.829,15.815,15.798,15.880
 //double DX[20]= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 const double Dx = 3.5/2;
-//double DX[20]= {-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx};
+double DX[20]= {-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx};
 
 // TOF1
 //double DX[20]= {-1.091,2.903,-1.356,2.045,-2.117,1.302,-2.404,0.624,-1.570,1.623,-2.274,1.932,-1.187,2.086,-1.671,1.473,-1.302,1.068,-1.904,1.678};
 
 // TOF2
-double DX[20]= {-1.296,2.740,-1.581,1.946,-2.815,1.418,-1.733,1.516,-1.371,1.971,-2.028,1.632,-0.674,1.112,-1.985,1.980,-1.081,1.306,-1.760,0.637};
+//double DX[20]= {-1.296,2.740,-1.581,1.946,-2.815,1.418,-1.733,1.516,-1.371,1.971,-2.028,1.632,-0.674,1.112,-1.985,1.980,-1.081,1.306,-1.760,0.637};
 
 // TOF3
 //double DX[20]= {-1.369,2.804,-1.739,1.807,-2.814,1.383,-1.969,1.880,-1.250,1.546,-2.458,1.860,-1.209,2.092,-1.147,1.949,-0.960,0.699,-1.913,0.764};
@@ -74,15 +74,20 @@ void DrawTrackOnly(TString sname="")
     //sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF1_Data_7_21_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF1_Data_7_21_2020_Binary_1track.root";
     
-    sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary.root";
+    //sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary_1track.root";
     
-    //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF3_Data_8_6_2020_Binary.root";
+    //sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF3_Data_8_6_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF3_Data_8_6_2020_Binary_1track.root";
     
-    //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF4_Data_8_12_2020_Binary.root";
+    //sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF4_Data_8_12_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF4_Data_8_12_2020_Binary_1track.root";
     
+    //this has 36 channels!
+    //sname="../datafiles/Run_bar220cm_110cm_36ch_2sides_V111_bot_TOF5_Data_9_30_2020_Binary.root";
+
+    sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_V111_top_TOF6_Data_10_2_2020_Binary.root";
+
     
     ///////////////// Open input file /////////////////////////////////////
     
@@ -309,11 +314,25 @@ void DrawTrackOnly(TString sname="")
     hX_Xtr->SetYTitle("X_{hit} - X_{track}");
 
 
+    sprintf(ctmp,"hX_Xtr_sel");
+    TH2 *hX_Xtr_sel = (TH2*)gDirectory->Get(ctmp);
+    if(hX_Xtr!=0) delete hX_Xtr_sel;
+    hX_Xtr_sel = new TH2F(ctmp,"X vs Xtr (chi2<4)", 120,-115,115, 20,-10, 10);
+    hX_Xtr_sel->GetXaxis()->SetLabelSize(0.03);
+    hX_Xtr_sel->GetYaxis()->SetLabelSize(0.03);
+    hX_Xtr_sel->GetXaxis()->SetTickLength(0.02);
+    hX_Xtr_sel->GetYaxis()->SetTickLength(0.02);
+    hX_Xtr_sel->SetXTitle("x_{hit} [cm]");
+    hX_Xtr_sel->SetYTitle("X_{hit} - X_{track}");
+    
+
+
+
     TH1F *hX   = new TH1F("hX", " X hit   ", 120, -115, 115);
     TH1F *hXtr = new TH1F("hXtr", " Xtrack   ", 120, -115, 115);
     TH1F *hXres = new TH1F("hXres", " Xtrack - X hit residuals   ", 200, -10, 10);
 
-
+    TH1F *hXres_sel = new TH1F("hXres_sel", " Xtrack - X hit residuals  (chi2<4) ", 200, -10, 10);  
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
@@ -457,6 +476,13 @@ void DrawTrackOnly(TString sname="")
                 hXtr->Fill(xtr[itr]);
                 hXres->Fill(X[19-itr]-xtr[itr]);
 
+                if( chi2 < 4 ) {    
+                    hX_Xtr_sel->Fill( X[19-itr], X[19-itr]-xtr[itr]);
+                    hXres_sel->Fill(X[19-itr]-xtr[itr]);
+
+                }
+
+
                 }   
 
 
@@ -522,6 +548,18 @@ void DrawTrackOnly(TString sname="")
     hXres->SetLineWidth(3);
 
     hXres->Draw();
+
+
+    TCanvas *c7 = new TCanvas("c7", "c7 ", 600, 600);
+    c7->cd();
+    hXres_sel->SetLineColor(1);
+    hXres_sel->SetLineWidth(3);
+
+    hXres_sel->Draw();
+
+    TCanvas *c8 = new TCanvas("c8", "c8 ", 600, 600);
+    c8->cd();
+    hX_Xtr_sel->Draw();
 
 
 
