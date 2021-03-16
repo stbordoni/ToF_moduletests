@@ -17,13 +17,13 @@ const double L = 220; // cm
 const double Vinf = 15.90; // velocity [cm/s]
 //const double Vinf = 17.00;
 
-double VINF[20]= {Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf};
+//double VINF[20]= {Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf};
 
 // TOF1
 //double VINF[20]= {16.014,15.964,15.912,15.906,15.870,15.872,15.889,15.724,15.924,15.878,15.934,15.929,15.889,15.839,15.821,15.958,15.939,15.919,15.879,16.014};
 
 // TOF2
-//double VINF[20]= {16.053,15.896,15.908,15.902,15.908,15.829,15.815,15.798,15.880,15.915,15.907,15.911,15.860,15.926,15.896,15.912,15.858,15.968,15.940,15.989};
+double VINF[20]= {16.053,15.896,15.908,15.902,15.908,15.829,15.815,15.798,15.880,15.915,15.907,15.911,15.860,15.926,15.896,15.912,15.858,15.968,15.940,15.989};
 
 // TOF3
 //double VINF[20]= {16.010,15.917,15.944,15.890,15.865,15.897,15.889,15.889,15.886,15.864,15.867,15.827,15.871,15.828,15.904,15.960,15.976,15.966,16.023,15.871};
@@ -38,13 +38,13 @@ double VINF[20]= {Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vi
 //double DX[20]= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 const double Dx = 3.5/2;
-double DX[20]= {-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx};
+//double DX[20]= {-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx};
 
 // TOF1
 //double DX[20]= {-1.091,2.903,-1.356,2.045,-2.117,1.302,-2.404,0.624,-1.570,1.623,-2.274,1.932,-1.187,2.086,-1.671,1.473,-1.302,1.068,-1.904,1.678};
 
 // TOF2
-//double DX[20]= {-1.296,2.740,-1.581,1.946,-2.815,1.418,-1.733,1.516,-1.371,1.971,-2.028,1.632,-0.674,1.112,-1.985,1.980,-1.081,1.306,-1.760,0.637};
+double DX[20]= {-1.296,2.740,-1.581,1.946,-2.815,1.418,-1.733,1.516,-1.371,1.971,-2.028,1.632,-0.674,1.112,-1.985,1.980,-1.081,1.306,-1.760,0.637};
 
 // TOF3
 //double DX[20]= {-1.369,2.804,-1.739,1.807,-2.814,1.383,-1.969,1.880,-1.250,1.546,-2.458,1.860,-1.209,2.092,-1.147,1.949,-0.960,0.699,-1.913,0.764};
@@ -71,16 +71,16 @@ void DrawTrackOnly(TString sname="")
     
     /////////////////// in ///////////////////////////////////
     
-    //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF1_Data_7_21_2020_Binary.root";
+    //sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF1_Data_7_21_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF1_Data_7_21_2020_Binary_1track.root";
     
-    //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary.root";
+    sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary_1track.root";
     
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF3_Data_8_6_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF3_Data_8_6_2020_Binary_1track.root";
     
-    sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF4_Data_8_12_2020_Binary.root";
+    //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF4_Data_8_12_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF4_Data_8_12_2020_Binary_1track.root";
     
     
@@ -291,6 +291,29 @@ void DrawTrackOnly(TString sname="")
     fun_tr->SetLineColor(kBlue);
     
     
+    sprintf(ctmp,"hX_Xtr");
+    TH2 *hX_Xtr = (TH2*)gDirectory->Get(ctmp);
+    if(hX_Xtr!=0) delete hX_Xtr;
+    hX_Xtr = new TH2F(ctmp,"X vs Xtr", 120,-115,115, 20,-10, 10);
+    //hX_Xtr->GetYaxis()->SetNdivisions(21);
+    hX_Xtr->GetXaxis()->SetLabelSize(0.03);
+    hX_Xtr->GetYaxis()->SetLabelSize(0.03);
+    //hX_Xtr->GetYaxis()->SetLabelSize(0.);
+    //hX_Xtr->GetYaxis()->SetLabelColor(kWhite);
+    hX_Xtr->GetXaxis()->SetTickLength(0.02);
+    hX_Xtr->GetYaxis()->SetTickLength(0.02);
+    //hXYl_inv->GetYaxis()->SetBinLabel(1,"x");
+    //hX_Xtr->GetYaxis()->SetAxisColor(kWhite);
+    //hX_Xtr->SetFillColor(kRed);
+    hX_Xtr->SetXTitle("x_{hit} [cm]");
+    hX_Xtr->SetYTitle("X_{hit} - X_{track}");
+
+
+    TH1F *hX   = new TH1F("hX", " X hit   ", 120, -115, 115);
+    TH1F *hXtr = new TH1F("hXtr", " Xtrack   ", 120, -115, 115);
+    TH1F *hXres = new TH1F("hXres", " Xtrack - X hit residuals   ", 200, -10, 10);
+
+
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
@@ -329,10 +352,11 @@ void DrawTrackOnly(TString sname="")
     int NSEL = 0;
     
     Long64_t nentries = tree->GetEntries();
-    //nentries=100;
+    //nentries=2000;
     printf("Number of events in file %i\n",(int)nentries);
     
     for ( Long64_t IE=0; IE<nentries; IE++ ) {
+        
         
         if( tree->GetEntry(IE) == 0 ) break;
         
@@ -364,12 +388,14 @@ void DrawTrackOnly(TString sname="")
                 double l1_b1 = GetL1(t8[i],t8[i+1],ibar) - dxb;
                 
                 l1_b1 -= (L+2*2.5)/2;
-                X[i] = l1_b1;
+                //X[i] = l1_b1;
+                X[NGOOD] = l1_b1;
                 
                 hXYl    ->Fill( l1_b1, ibar );
                 hXYl_all->Fill( l1_b1, ibar );
                 hXYl_inv->Fill( l1_b1, 19-ibar );
-                
+                //std::cout << "l1_b1  "  << l1_b1 << std::endl;
+                //std::cout << " NGOOD " << NGOOD<< "X[NGOOD]  "  << X[NGOOD] << std::endl;
                 NGOOD++;
             }
             
@@ -404,7 +430,9 @@ void DrawTrackOnly(TString sname="")
             for(int itr=0; itr<20; itr++) {
                 xtr[itr] = (itr-b)/a;
                 //printf("%2i %.2f\n",itr,xtr[itr]);
+                
             }
+            
             
             
             if( chi2 < 100 ) {
@@ -417,6 +445,21 @@ void DrawTrackOnly(TString sname="")
                 
                 printf("%i  %.2f\n",(int)IE,chi2);
                 
+                for(int itr=0; itr<20; itr++) {
+
+                    //if (itr == 10){
+                        //std::cout << " X[itr] " << X[itr] << " xtr[itr]  " << xtr[itr] << std::endl;
+                        //std::cout << " X[19-itr] " << X[19-itr] << " xtr[itr]  " << xtr[itr] << std::endl;
+                    //}
+                hX_Xtr->Fill( X[19-itr], X[19-itr]-xtr[itr]);
+
+                hX->Fill( X[itr]);
+                hXtr->Fill(xtr[itr]);
+                hXres->Fill(X[19-itr]-xtr[itr]);
+
+                }   
+
+
                 NSEL++;
             }
             
@@ -434,9 +477,54 @@ void DrawTrackOnly(TString sname="")
     
     //////////////////////////////////
   
-    //hXYl_all->Draw("box");
-    //hChi2->Draw("");
+
+    TCanvas *c2 = (TCanvas*)gROOT->GetListOfCanvases()->FindObject("c2");
+    if(c2!=0) delete c2;
+    //c1 = new TCanvas("c1","c1",0,0,800,520);
+    c2 = new TCanvas("c2","c2",0,0, 600,600);
+    c2->cd();
+
+
+    hXYl_all->Draw("box");
     
+    TCanvas *c3 = (TCanvas*)gROOT->GetListOfCanvases()->FindObject("c3");
+    if(c3!=0) delete c3;
+    //c1 = new TCanvas("c1","c1",0,0,800,520);
+    c3 = new TCanvas("c3","c3",0,0, 600,600);
+    c3->cd();
+    
+    hChi2->Draw("");
+    
+
+    TCanvas *c4 = (TCanvas*)gROOT->GetListOfCanvases()->FindObject("c4");
+    if(c4!=0) delete c4;
+    //c1 = new TCanvas("c1","c1",0,0,800,520);
+    c4 = new TCanvas("c4","c4",0,0, 600,600);
+    c4->cd();
+    hX_Xtr->Draw();
+
+
+    TCanvas *c5 = new TCanvas("c5", "c5 ", 600, 600);
+    c5->cd();
+    hX->SetLineColor(4);
+    hX->Draw();
+    hXtr->SetLineColor(kGreen-6);
+    hXtr->Draw("same");
+    TLegend *leg = new TLegend(0.1,0.7,0.48,0.9);
+    leg->AddEntry("hX", "X hit", "l");
+    leg->AddEntry("hXtr", "X track", "l");
+    leg->Draw("same");
+
+    TCanvas *c6 = new TCanvas("c6", "c6 ", 600, 600);
+    c6->cd();
+    gStyle->SetOptFit(11111);
+    hXres->SetLineColor(1);
+    hXres->SetLineWidth(3);
+
+    hXres->Draw();
+
+
+
     //////////////////////////////////
     
     printf("NSEL = %i\n",NSEL);

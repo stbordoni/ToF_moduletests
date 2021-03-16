@@ -73,14 +73,30 @@ void MakeRootTree(TString sname="")
     
     if( !FEXTERN ) {
         
-        //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF1_Data_7_21_2020_Binary.bin";
+        TString path = "/Users/bordonis/ResearchActivities/ND280Upgrade/ToF/code/datafiles/";
+
+        //TOF1
+        //sname=path+"Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF1_Data_7_21_2020_Binary.bin";
+    
+        //TOF2
+        //sname=path+"Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary.bin";
         
-        //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary.bin";
+        //TOF3 
+        //sname=path+"Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF3_Data_8_6_2020_Binary.bin";
         
-        //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF3_Data_8_6_2020_Binary.bin";
+        //TOF4 
+        //sname=path+"Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF4_Data_8_12_2020_Binary.bin";
         
-        sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF4_Data_8_12_2020_Binary.bin";
-        
+        //ToF5 
+        //sname=path+"Run_bar220cm_110cm_36ch_2sides_V111_bot_TOF5_Data_9_30_2020_Binary.bin";
+
+        //sname=path+"Run_bar220cm_110cm_36ch_2sides_V111_bot_TOF5_Data_9_26_2020_Binary.bin";
+
+        //TOF 6
+        sname=path+"Run_bar220cm_110cm_40ch_2sides_V111_top_TOF6_Data_10_2_2020_Binary.bin";
+
+
+
     }
     
     
@@ -90,7 +106,7 @@ void MakeRootTree(TString sname="")
     
     //////// Open output file ///////////////////////
     
-    int idot = sname.Index(".");
+    Ssiz_t idot = sname.Index(".");
     TString fname = sname(0,idot);
     fname += ".root";
     
