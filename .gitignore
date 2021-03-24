@@ -1,0 +1,6 @@
+.DS_Store
+*.root
+Plots/
+*.so
+*.d
+*.pcm
