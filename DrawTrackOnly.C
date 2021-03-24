@@ -12,15 +12,23 @@
 
 const double L = 220; // cm
 
+
+ 
+
 ///////////////////////////
 
 const double Vinf = 15.90; // velocity [cm/s]
 //const double Vinf = 17.00;
 
-double VINF[20]= {Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf};
+//double VINF[20]= {Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf};
 
 // TOF1
-//double VINF[20]= {16.014,15.964,15.912,15.906,15.870,15.872,15.889,15.724,15.924,15.878,15.934,15.929,15.889,15.839,15.821,15.958,15.939,15.919,15.879,16.014};
+// Alexander : double VINF[20]= {16.014,15.964,15.912,15.906,15.870,15.872,15.889,15.724,15.924,15.878,15.934,15.929,15.889,15.839,15.821,15.958,15.939,15.919,15.879,16.014};
+//double VINF[20]= { 15.8956, 15.902, 15.8996, 15.899, 15.8961, 15.905, 15.9036, 15.9009, 15.8992, 15.9002, 15.9019, 15.8968, 15.9094, 15.901, 15.8986, 15.9021, 15.8986, 15.899, 15.8953, 15.8938  }; 
+//double VINF[20]= { 15.891, 15.904, 15.899, 15.897, 15.892, 15.910, 15.907, 15.903, 15.898, 15.901, 15.904, 15.894, 15.919, 15.901, 15.898, 15.904, 15.897, 15.898, 15.891, 15.887  }; 
+//double VINF[20]= {15.904,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf};
+double VINF[20]= {16.014,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf};
+
 
 // TOF2
 //double VINF[20]= {16.053,15.896,15.908,15.902,15.908,15.829,15.815,15.798,15.880,15.915,15.907,15.911,15.860,15.926,15.896,15.912,15.858,15.968,15.940,15.989};
@@ -38,13 +46,17 @@ double VINF[20]= {Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vinf,Vi
 //double DX[20]= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 const double Dx = 3.5/2;
-double DX[20]= {-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx};
+//double DX[20]= {-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx};
 
 // TOF1
-//double DX[20]= {-1.091,2.903,-1.356,2.045,-2.117,1.302,-2.404,0.624,-1.570,1.623,-2.274,1.932,-1.187,2.086,-1.671,1.473,-1.302,1.068,-1.904,1.678};
+// Alexander --> double DX[20]= {-1.091,2.903,-1.356,2.045,-2.117,1.302,-2.404,0.624,-1.570,1.623,-2.274,1.932,-1.187,2.086,-1.671,1.473,-1.302,1.068,-1.904,1.678};
+//double DX[20]= {-1.63831, 1.89605, -2.15735, 2.30059, -1.90448, 1.93373, -1.29697, 2.35799, -1.52673, 1.40584, -1.89098, 1.82633, -2.78917, 1.09952, -2.21297, 1.35722, -1.60793, 1.89879, -0.781469, 2.23056};
+//double DX[20]= { -1.935, 1.098, -2.732, 2.759, -1.683, 2.567, -0.257, 3.852, -1.367, 1.177, -1.755, 1.699, -4.374, 0.039, -2.827, 1.113, -1.916, 2.516, 0.100, 2.635  };
+//double DX[20]= {-1.862,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx};
+double DX[20]= {-1.091,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx,-Dx,Dx};
 
 // TOF2
-//double DX[20]= {-1.296,2.740,-1.581,1.946,-2.815,1.418,-1.733,1.516,-1.371,1.971,-2.028,1.632,-0.674,1.112,-1.985,1.980,-1.081,1.306,-1.760,0.637};
+//double DX[20]= {-1.296, 2.740,-1.581,1.946,-2.815,1.418,-1.733,1.516,-1.371,1.971,-2.028,1.632,-0.674,1.112,-1.985,1.980,-1.081,1.306,-1.760,0.637};
 
 // TOF3
 //double DX[20]= {-1.369,2.804,-1.739,1.807,-2.814,1.383,-1.969,1.880,-1.250,1.546,-2.458,1.860,-1.209,2.092,-1.147,1.949,-0.960,0.699,-1.913,0.764};
@@ -66,14 +78,18 @@ void DrawBars();
 
 void DrawTrackOnly(TString sname="")
 {
-    gStyle->SetOptStat(0);
+    gStyle->SetOptStat(1111);
     
-    
+    gStyle->SetOptFit(11111);
     /////////////////// in ///////////////////////////////////
-    
+
     //sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF1_Data_7_21_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF1_Data_7_21_2020_Binary_1track.root";
-    
+    //sname="./TOF1_default_v15p90_and_pos_selectedtracks.root";
+    //sname= "./TOF1_default_v15p90_and_pos_selectedtracks_cal2.root";
+    sname = "./TOF1_cal_bar0.root";
+
+
     //sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary.root";
     //sname="Run_bar220cm_110cm_40ch_2sides_vert_111V_TOF2_Data_7_31_2020_Binary_1track.root";
     
@@ -86,7 +102,7 @@ void DrawTrackOnly(TString sname="")
     //this has 36 channels!
     //sname="../datafiles/Run_bar220cm_110cm_36ch_2sides_V111_bot_TOF5_Data_9_30_2020_Binary.root";
 
-    sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_V111_top_TOF6_Data_10_2_2020_Binary.root";
+    //sname="../datafiles/Run_bar220cm_110cm_40ch_2sides_V111_top_TOF6_Data_10_2_2020_Binary.root";
 
     
     ///////////////// Open input file /////////////////////////////////////
@@ -102,7 +118,9 @@ void DrawTrackOnly(TString sname="")
     f->cd();
     TTree *tree = 0;
     tree = (TTree*)f->Get("tree");
-    
+
+   
+
     const int NCH=40;
     
     //Declaration of leaves types
@@ -182,7 +200,8 @@ void DrawTrackOnly(TString sname="")
     // tree->SetBranchStatus("*",0);  // disable all branches
     // TTreePlayer->SetBranchStatus("branchname",1);  // activate branchname
     
-    
+    TFile newfile("small.root", "recreate");
+    auto newtree = tree->CloneTree(0);
   
     
     //////////////////// Make histograms /////////////////////////////////////////////
@@ -216,7 +235,7 @@ void DrawTrackOnly(TString sname="")
         sprintf(ctmp,"dt [ns]");
         hDTL[i]->SetXTitle(ctmp);
     }
-    
+
     
     TH1 *hDT[100];
     for( int i=0; i<NCH/2-1; i++ ) {
@@ -228,7 +247,37 @@ void DrawTrackOnly(TString sname="")
         sprintf(ctmp,"dt [ns]");
         hDT[i]->SetXTitle(ctmp);
     }
+
+
+    TH2 *hX_vs_Xtr[100];
+    for( int i=0; i<NCH/2; i++ ) {
+        sprintf(ctmp,"hX_vs_Xtr_%i",i);
+        //std::cout << ctmp << std::endl;
+        hX_vs_Xtr[i] = (TH2*)gDirectory->Get(ctmp);
+        if(hX_vs_Xtr[i]!=0) delete hX_vs_Xtr[i];
+        hX_vs_Xtr[i] = new TH2F(ctmp,"",230,-115,115, 20,-10, 10 );
+        hX_vs_Xtr[i]->SetMarkerStyle(21);
+        hX_vs_Xtr[i]->SetMarkerSize(0.6);
+        sprintf(ctmp,"x_{hit} [cm]");
+        hX_vs_Xtr[i]->SetXTitle(ctmp);
+        sprintf(ctmp,"X_{hit} - X_{track} [cm]");
+        hX_vs_Xtr[i]->SetYTitle(ctmp);
+    }
+
+     
+
+    TH1 *hXres[100];
+    for( int i=0; i<NCH/2; i++ ) {
+        sprintf(ctmp,"hXres_%i",i);
+        hXres[i] = (TH1*)gDirectory->Get(ctmp);
+        if(hXres[i]!=0) delete hXres[i];
+        hXres[i] = new TH1F(ctmp,"Xtrack - X hit residuals",200, -10,10 );
+        hXres[i]->SetLineWidth(3);
+        sprintf(ctmp,"Xtrack - X hit [cm]");
+        hXres[i]->SetXTitle(ctmp);
+    }
     
+
     
     sprintf(ctmp,"hXY");
     TH2 *hXY = (TH2*)gDirectory->Get(ctmp);
@@ -296,7 +345,7 @@ void DrawTrackOnly(TString sname="")
     fun_tr->SetLineColor(kBlue);
     
     
-    sprintf(ctmp,"hX_Xtr");
+    /*sprintf(ctmp,"hX_Xtr");
     TH2 *hX_Xtr = (TH2*)gDirectory->Get(ctmp);
     if(hX_Xtr!=0) delete hX_Xtr;
     hX_Xtr = new TH2F(ctmp,"X vs Xtr", 120,-115,115, 20,-10, 10);
@@ -312,11 +361,11 @@ void DrawTrackOnly(TString sname="")
     //hX_Xtr->SetFillColor(kRed);
     hX_Xtr->SetXTitle("x_{hit} [cm]");
     hX_Xtr->SetYTitle("X_{hit} - X_{track}");
-
+    */
 
     sprintf(ctmp,"hX_Xtr_sel");
     TH2 *hX_Xtr_sel = (TH2*)gDirectory->Get(ctmp);
-    if(hX_Xtr!=0) delete hX_Xtr_sel;
+    if(hX_Xtr_sel!=0) delete hX_Xtr_sel;
     hX_Xtr_sel = new TH2F(ctmp,"X vs Xtr (chi2<4)", 120,-115,115, 20,-10, 10);
     hX_Xtr_sel->GetXaxis()->SetLabelSize(0.03);
     hX_Xtr_sel->GetYaxis()->SetLabelSize(0.03);
@@ -330,7 +379,7 @@ void DrawTrackOnly(TString sname="")
 
     TH1F *hX   = new TH1F("hX", " X hit   ", 120, -115, 115);
     TH1F *hXtr = new TH1F("hXtr", " Xtrack   ", 120, -115, 115);
-    TH1F *hXres = new TH1F("hXres", " Xtrack - X hit residuals   ", 200, -10, 10);
+    //TH1F *hXres = new TH1F("hXres", " Xtrack - X hit residuals   ", 200, -10, 10);
 
     TH1F *hXres_sel = new TH1F("hXres_sel", " Xtrack - X hit residuals  (chi2<4) ", 200, -10, 10);  
     
@@ -373,7 +422,28 @@ void DrawTrackOnly(TString sname="")
     Long64_t nentries = tree->GetEntries();
     //nentries=2000;
     printf("Number of events in file %i\n",(int)nentries);
-    
+
+    //double a_bar_v1sum[20]; // array storing the sum of the estimated v1 for each bar
+    //double a_bar_v2sum[20]; // array storing the sum of the estimated v2 for each bar --> to do the average at the end
+    //int  a_bar_evts[20];  // to count how many hits we have in that bar (the selection can kill some hits so nhits != nentries)
+
+    double a_par0[20];
+    double a_par1[20];
+    double a_bar_number[20];  
+
+    double a_gaus_mu[20];
+    double a_gaus_sigma[20];
+
+
+    /*
+    for (int ibar =0; ibar < 20; ibar++){
+        a_bar_v1sum[ibar] = 0;   
+        a_bar_v2sum[ibar] = 0;  
+        a_bar_evts[ibar]  = 0;   
+        a_bar_number[ibar] = ibar;
+    }*/
+
+
     for ( Long64_t IE=0; IE<nentries; IE++ ) {
         
         
@@ -406,6 +476,18 @@ void DrawTrackOnly(TString sname="")
                 
                 double l1_b1 = GetL1(t8[i],t8[i+1],ibar) - dxb;
                 
+                //
+                //double v1 = GetV(l1_b1,ibar);
+                //double v2 = GetV(L-l1_b1,ibar);
+                //std::cout << " bar  " << ibar << "  v1 " << v1 << "  v2 " << v2 <<  std::endl;    
+
+                //a_bar_v1sum[ibar]= a_bar_v1sum[ibar] + v1;
+                //a_bar_v2sum[ibar]= a_bar_v2sum[ibar] + v2;
+                
+                //a_bar_evts[ibar] = a_bar_evts[ibar]+1;
+                
+                //
+
                 l1_b1 -= (L+2*2.5)/2;
                 //X[i] = l1_b1;
                 X[NGOOD] = l1_b1;
@@ -426,6 +508,8 @@ void DrawTrackOnly(TString sname="")
         
         if(NGOOD==20) {
     
+            newtree->Fill();
+
             //hXY->Draw("box");
             //hXYl->Draw("box");
             hXYl_inv->Draw("box");
@@ -464,17 +548,16 @@ void DrawTrackOnly(TString sname="")
                 
                 printf("%i  %.2f\n",(int)IE,chi2);
                 
+            
                 for(int itr=0; itr<20; itr++) {
-
-                    //if (itr == 10){
-                        //std::cout << " X[itr] " << X[itr] << " xtr[itr]  " << xtr[itr] << std::endl;
-                        //std::cout << " X[19-itr] " << X[19-itr] << " xtr[itr]  " << xtr[itr] << std::endl;
-                    //}
-                hX_Xtr->Fill( X[19-itr], X[19-itr]-xtr[itr]);
+                
+ 
+                hX_vs_Xtr[itr]->Fill( X[19-itr], X[19-itr]-xtr[itr]);
+                
 
                 hX->Fill( X[itr]);
                 hXtr->Fill(xtr[itr]);
-                hXres->Fill(X[19-itr]-xtr[itr]);
+                hXres[itr]->Fill(X[19-itr]-xtr[itr]);
 
                 if( chi2 < 4 ) {    
                     hX_Xtr_sel->Fill( X[19-itr], X[19-itr]-xtr[itr]);
@@ -500,6 +583,23 @@ void DrawTrackOnly(TString sname="")
         
     } // end of loop over IE
     
+
+
+
+    //double a_bar_v1mean[20] ;
+    //double a_bar_v2mean[20] ;
+
+    
+    // printout the mean value for the v1 and v2 for each bar
+    //for (int ibar=0; ibar < 20; ibar++){
+       
+        //a_bar_v1mean[ibar] = a_bar_v1sum[ibar]/a_bar_evts[ibar];
+        //a_bar_v2mean[ibar] = a_bar_v2sum[ibar]/a_bar_evts[ibar];
+
+
+        //std::cout << " bar " << ibar << ":  v1_mean " << a_bar_v1mean[ibar] << ";  v2_mean " << a_bar_v2mean[ibar] << std::endl;
+    }//   
+
     
     //////////////////////////////////
   
@@ -527,7 +627,52 @@ void DrawTrackOnly(TString sname="")
     //c1 = new TCanvas("c1","c1",0,0,800,520);
     c4 = new TCanvas("c4","c4",0,0, 600,600);
     c4->cd();
-    hX_Xtr->Draw();
+
+    gStyle->SetOptStat(1111);
+    gStyle->SetOptFit(1111);
+    
+    for (int ibar=0; ibar<20; ibar++){
+    //hX_Xtr->SetMarkerStyle(21);
+    //hX_Xtr->SetMarkerSize(0.6);
+    
+        std::cout << " bar " << ibar << std::endl; 
+ 
+        hX_vs_Xtr[ibar]->Draw();
+
+        TF1* fun_pol1 = new TF1("fun_pol1","pol1",-110,110);
+        fun_pol1->SetLineColor(kRed);
+
+        //hX_vs_Xtr[ibar]->Fit("pol1"); 
+        
+        hX_vs_Xtr[ibar]->Fit("fun_pol1");     
+
+        //retrieve the values and store them in array to have an easy printout at the end to use in the macro
+        a_par0[ibar] = fun_pol1->GetParameter(0); 
+        a_par1[ibar] = fun_pol1->GetParameter(1);
+
+        std::cout<< " bar : " << ibar << "  par0:  "<< fun_pol1->GetParameter(0) << "  par 1:  " << fun_pol1->GetParameter(1) << std::endl; 
+
+    }
+
+    // execute the printout
+
+    std::cout << " par 0 [X pos]: [ " << std::endl;
+    std::cout << " { " ; 
+    std::cout << std::setprecision(3) << std::fixed;    
+
+    for (int ibar=0; ibar<20; ibar++) { 
+        std::cout << DX[ibar] - a_par0[ibar] << ", ";
+    }
+    std::cout << " }; " << std::endl;
+
+    std::cout << " par 1 [Vinf]: "<< std::endl; 
+    std::cout << " { " ;
+    std::cout << std::setprecision(3) << std::fixed;
+
+    for (int ibar=0; ibar<20; ibar++) { 
+        std::cout << VINF[ibar] - a_par1[ibar] << ", ";
+    }
+    std::cout << " }; " << std::endl;
 
 
     TCanvas *c5 = new TCanvas("c5", "c5 ", 600, 600);
@@ -544,11 +689,42 @@ void DrawTrackOnly(TString sname="")
     TCanvas *c6 = new TCanvas("c6", "c6 ", 600, 600);
     c6->cd();
     gStyle->SetOptFit(11111);
-    hXres->SetLineColor(1);
-    hXres->SetLineWidth(3);
+    
+    for (int ibar =0; ibar<20; ibar ++){
+    hXres[ibar]->SetLineColor(1);
+    hXres[ibar]->SetLineWidth(3);
 
-    hXres->Draw();
+    hXres[ibar]->Draw();
 
+    TF1* fun_gaus = new TF1("fun_gaus","gaus",-10,10);
+    fun_gaus->SetLineColor(kRed);
+    hXres[ibar]->Fit("fun_gaus");     
+
+    a_gaus_mu[ibar]    = fun_gaus->GetParameter(1); 
+    a_gaus_sigma[ibar] = fun_gaus->GetParameter(2);
+    }
+
+
+    TGraph *g_gaus_mean = new TGraph(20, a_bar_number, a_gaus_mu);
+    TGraph *g_gaus_sigma = new TGraph(20, a_bar_number, a_gaus_sigma);
+    
+    g_gaus_mean->SetMarkerStyle(21);  
+    g_gaus_mean->SetMarkerColor(kBlue);  
+    g_gaus_mean->SetMarkerSize(0.6);
+
+    g_gaus_sigma->SetMarkerStyle(21);  
+    g_gaus_sigma->SetMarkerColor(kOrange);  
+    g_gaus_sigma->SetMarkerSize(0.6);     
+
+    g_gaus_mean->Draw("AP");
+    g_gaus_sigma->Draw("P same");
+
+    g_gaus_mean->SetName("g_gaus_mean");
+    g_gaus_sigma->SetName("g_gaus_sigma");
+
+    g_gaus_mean->Write();
+    g_gaus_sigma->Write();
+    
 
     TCanvas *c7 = new TCanvas("c7", "c7 ", 600, 600);
     c7->cd();
@@ -568,7 +744,9 @@ void DrawTrackOnly(TString sname="")
     printf("NSEL = %i\n",NSEL);
     
     //c1->Print("c1.pdf"); printf(".! open c1.pdf\n");
-    
+    newfile.Write();
+
+
     return;
 }
 
@@ -635,7 +813,9 @@ double GetL1(double t1,double t2, int ibar )
     v1 = GetV(l1,ibar);
     v2 = GetV(L-l1,ibar);
     l1 = v1/(v1+v2) * ( (t1-t2)*v2 + L );
-    
+
+    //std::cout << " bar  " << ibar << "  v1 " << v1 << "  v2 " << v2 <<  std::endl;
+
     return l1;
 }
 
